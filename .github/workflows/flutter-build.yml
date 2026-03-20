@@ -555,7 +555,7 @@ jobs:
   build-for-macOS:
     if: false  # 添加这一行，强制关闭 macOS 编译
     name: ${{ matrix.job.target }}
-    runs-on: 
+    runs-on: macos-13
     needs: [generate-bridge]
     strategy:
       fail-fast: false
