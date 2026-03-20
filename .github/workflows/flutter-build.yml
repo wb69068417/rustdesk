@@ -433,9 +433,9 @@ jobs:
             ./SignOutput/rustdesk-*.exe
 
   build-rustdesk-ios:
-    if: ${{ inputs.upload-artifact }}
+    if: false  # 强制关闭，不再运行
     name: build rustdesk ios ipa
-    runs-on: ${{ matrix.job.os }}
+    runs-on: macos-13
     needs: [generate-bridge]
     strategy:
       fail-fast: false
@@ -553,8 +553,9 @@ jobs:
 
 
   build-for-macOS:
+    if: false  # 添加这一行，强制关闭 macOS 编译
     name: ${{ matrix.job.target }}
-    runs-on: ${{ matrix.job.os }}
+    runs-on: 
     needs: [generate-bridge]
     strategy:
       fail-fast: false
