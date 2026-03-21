@@ -760,7 +760,7 @@ jobs:
           files: |
             rustdesk*-${{ matrix.job.arch }}.dmg
 
-publish_unsigned:
+ publish_unsigned:
     name: publish_unsigned
     runs-on: ubuntu-latest
     # 修复点 1：移除对已禁用任务 (macOS) 的依赖，只保留你确实在运行的任务
@@ -799,7 +799,7 @@ publish_unsigned:
           files: |
             rustdesk-build-output.tar.gz
             ./android/*.apk
-build-rustdesk-android:
+ build-rustdesk-android:
     needs: [generate-bridge]
     name: build rustdesk android apk ${{ matrix.job.target }}
     runs-on: ${{ matrix.job.os }}
@@ -1102,7 +1102,7 @@ build-rustdesk-android:
           files: |
             signed-apk/rustdesk-${{ env.VERSION }}-${{ matrix.job.arch }}.apk
 
-  build-rustdesk-android-universal:
+ build-rustdesk-android-universal:
     needs: [build-rustdesk-android]
     name: build rustdesk android universal apk
     if: ${{ inputs.upload-artifact }}
@@ -1297,7 +1297,7 @@ build-rustdesk-android:
           files: |
             signed-apk/rustdesk-${{ env.VERSION }}-universal${{ env.suffix }}.apk
 
-  build-rustdesk-linux:
+ build-rustdesk-linux:
     needs: [generate-bridge]
     name: build rustdesk linux ${{ matrix.job.target }}
     runs-on: ${{ matrix.job.on }}
