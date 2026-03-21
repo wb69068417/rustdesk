@@ -760,7 +760,7 @@ jobs:
           files: |
             rustdesk*-${{ matrix.job.arch }}.dmg
 
- publish_unsigned:
+  publish_unsigned:
     name: publish_unsigned
     runs-on: ubuntu-latest
     # 修复点 1：移除对已禁用任务 (macOS) 的依赖，只保留你确实在运行的任务
