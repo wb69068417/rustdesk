@@ -799,7 +799,7 @@ publish_unsigned:
           files: |
             rustdesk-build-output.tar.gz
             ./android/*.apk
-  build-rustdesk-android:
+build-rustdesk-android:
     needs: [generate-bridge]
     name: build rustdesk android apk ${{ matrix.job.target }}
     runs-on: ${{ matrix.job.os }}
